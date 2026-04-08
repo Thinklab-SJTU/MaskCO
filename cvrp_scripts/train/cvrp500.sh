@@ -1,0 +1,14 @@
+python -u -m training.train_cvrp \
+    --num_nodes 500 \
+    --data_augment 1 \
+    --capacity 50 \
+    --model_config qk_norm_base_dim512 \
+    --peak_lr 8e-3 \
+    --batch_size 1024 \
+    --num_steps 150000 \
+    --num_warmup_steps 50 \
+    --save_interval 2500 \
+    --data ../datasets/cvrp500_train_merged.npz \
+    --logdir logs/cvrp500_base_dim512_merge_wd2e-1 \
+    --savedir ckpts/cvrp500_base_dim512_merge_wd2e-1 \
+    --optimizer_type muon_decay --weight_decay 2e-1 \
