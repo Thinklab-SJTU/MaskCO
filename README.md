@@ -15,6 +15,9 @@ sh install.sh
 cd lib && make
 ```
 
+## Data
+All datasets can be downloaded from [Baidu Netdisk](https://pan.baidu.com/s/1eyRkLda-y6VLCgpw0Tfsyw?pwd=fd59). For other details, please refer to `data` folder.
+
 ## Checkpoints
 Checkpoints can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1Y9kN7H5qvlsgbnOKih6hpkpcF2MHUreI?usp=sharing). To evaluate them, run the scripts in the `tsp_scripts/eval`, `cvrp_scripts/eval`, and `mis_scripts/eval` directories.
 
