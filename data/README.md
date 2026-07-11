@@ -1,10 +1,11 @@
 # Data
 
-All datasets can be downloaded from [Baidu Netdisk](https://pan.baidu.com/s/1eyRkLda-y6VLCgpw0Tfsyw?pwd=fd59). Below we provide instructions for converting the data into the required format.
+All datasets can be downloaded from [Hugging Face](https://huggingface.co/datasets/Rick242420/MaskCO) or [Baidu Netdisk](https://pan.baidu.com/s/1eyRkLda-y6VLCgpw0Tfsyw?pwd=fd59). Below we provide instructions for converting the data into the required format.
 
 **TSP**
 
 Download the txt files from https://github.com/Thinklab-SJTU/Fast-T2T/tree/main/data, and run:
+
 ```
 names=(
     "tsp100_concorde_7.75585"
@@ -40,6 +41,7 @@ python -u mis_convert.py \
 ```
 
 In the MIS ER training set, sample `115672` should be deleted because its `found_mis` flag is `False`. Run the following Python code:
+
 ```
 import json
 import numpy as np
@@ -60,6 +62,7 @@ np.savez_compressed('mis/er_700_800_train_repaired.npz', ids=ids, num_nodes=num_
 ```
 
 To convert the labels, run:
+
 ```
 import json
 import numpy as np
@@ -81,7 +84,9 @@ labels_array = np.stack(labels_list, axis=0)
 
 np.savez_compressed('mis/rb_200_300_train_labels.npz', labels=labels_array)
 ```
+
 and
+
 ```
 import json
 import numpy as np
@@ -105,4 +110,3 @@ for k, v in labels.items():
 
 np.savez_compressed('mis/er_700_800_train_repaired_labels.npz', labels=labels_array)
 ```
-
